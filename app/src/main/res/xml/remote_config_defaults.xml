@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+  <entry>
+    <key>adId</key>
+    <value>b65dda6d5013d7</value>
+  </entry>
+  <entry>
+    <key>maxShowCount</key>
+    <value>100</value>
+  </entry>
+  <entry>
+    <key>maxClickCount</key>
+    <value>100</value>
+  </entry>
+  <entry>
+    <key>triggerAdInterval</key>
+    <value>60000</value>
+  </entry>
+  <entry>
+    <key>isReview</key>
+    <value>false</value>
+  </entry>
+
+</defaults>

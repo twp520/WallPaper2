@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ContentDescription" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_share"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        app:backgroundTint="#30000000"
+        android:layout_height="wrap_content"
+        app:iconTint="@color/white"
+        app:icon="@drawable/icon_share"
+        app:layout_constraintBottom_toTopOf="@id/button_favorite"
+        app:layout_constraintEnd_toEndOf="@id/button_download" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_favorite"
+        app:backgroundTint="#30000000"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/icon_fav"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/button_download"
+        app:layout_constraintEnd_toEndOf="@id/button_download" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_download"
+        app:backgroundTint="#30000000"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:iconTint="@color/white"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:icon="@drawable/icon_download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

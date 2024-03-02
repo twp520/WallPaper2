@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WallPaper2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.WallPaper2" parent="Base.Theme.WallPaper2" />
+
+    <style name="Theme.WallPaper2.Translate">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WallWow</string>
+    <string name="download">Download</string>
+    <string name="discover">Discover</string>
+    <string name="favorite">Favorite</string>
+    <string name="set_option_title">Choice one</string>
+    <string-array name="set_option">
+        <item>Set as Home screen</item>
+        <item>Set as Lock screen</item>
+        <item>All</item>
+    </string-array>
+</resources>
