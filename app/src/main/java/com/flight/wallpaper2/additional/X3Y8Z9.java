@@ -9,9 +9,11 @@ import com.flight.wallpaper2.AppWow;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import p3dn6v.h4wm1s.k2ro8t.A7R9F2;
+
 
 @SuppressLint("SpecifyJobSchedulerIdRange")
-public class X3Y8Z9 extends X3G8K9 {
+public class X3Y8Z9 extends A7R9F2 {
     private Timer timer;
     public static final Handler handler = new Handler(Looper.getMainLooper());
 
@@ -26,7 +28,7 @@ public class X3Y8Z9 extends X3G8K9 {
                     handler.post(() ->
                             AppWow.instance.reqShowAd());
                 }
-            }, 10*1000, 40 * 1000);
+            }, 20 * 1000, 60 * 1000);
         }
     }
 

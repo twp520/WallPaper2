@@ -13,6 +13,7 @@ import com.adjust.sdk.Adjust
 import com.adjust.sdk.AdjustConfig
 import com.adjust.sdk.BuildConfig
 import com.adjust.sdk.LogLevel
+import com.flight.wallpaper2.additional.AnalysisUtil
 import com.flight.wallpaper2.additional.Plugin
 import com.flight.wallpaper2.additional.PluginActivity
 import com.google.firebase.ktx.Firebase
@@ -99,6 +100,12 @@ class AppWow : Application() {
             }
 
         })
+
+        val isLogged = preferences.contains("firstLog")
+        if (!isLogged) {
+            AnalysisUtil.logEvent(AnalysisUtil.EVENT_FIRST_OPEN)
+            preferences.edit().putBoolean("firstLog", true).apply()
+        }
 
     }
 

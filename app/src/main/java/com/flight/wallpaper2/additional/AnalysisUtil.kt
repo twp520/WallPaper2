@@ -15,6 +15,7 @@ object AnalysisUtil {
     const val EVENT_AD_CLOSED = "ad_closed"
     const val EVENT_AD_CLICKED = "ad_clicked"
     const val EVENT_AD_LOAD_FAIL = "ad_load_fail"
+    const val EVENT_FIRST_OPEN = "first_open_app"
 
 
     fun logEvent(key: String, args: Bundle? = null) {

