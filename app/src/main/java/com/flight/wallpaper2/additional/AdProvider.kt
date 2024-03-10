@@ -12,6 +12,7 @@ import com.anythink.core.api.ATAdInfo
 import com.anythink.core.api.AdError
 import com.anythink.interstitial.api.ATInterstitial
 import com.anythink.interstitial.api.ATInterstitialListener
+import com.flight.wallpaper2.AppWow
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -112,6 +113,7 @@ class AdProvider(
     override fun onInterstitialAdClose(p0: ATAdInfo?) {
         Log.d(logTag, "onInterstitialAdClose: ")
         AnalysisUtil.logEvent(AnalysisUtil.EVENT_AD_CLOSED)
+        AppWow.instance.finishAct()
     }
 
     override fun onInterstitialAdVideoStart(p0: ATAdInfo?) {

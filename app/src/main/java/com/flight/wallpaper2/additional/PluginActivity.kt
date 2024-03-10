@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.flight.wallpaper2.AppWow
@@ -17,16 +18,22 @@ class PluginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_plugin)
         onBackPressedDispatcher.addCallback(this,
             object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {}
-        })
+                override fun handleOnBackPressed() {}
+            })
         AppWow.instance.showAdDirectly(this)
-        finish()
     }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         AppWow.instance.showAdDirectly(this)
-        finish()
+    }
+
+
+    override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
+        if (event?.keyCode == KeyEvent.KEYCODE_BACK) {
+            return true
+        }
+        return super.dispatchKeyEvent(event)
     }
 
     override fun onDestroy() {

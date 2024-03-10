@@ -14,6 +14,7 @@ import com.adjust.sdk.AdjustConfig
 import com.adjust.sdk.BuildConfig
 import com.adjust.sdk.LogLevel
 import com.flight.wallpaper2.additional.Plugin
+import com.flight.wallpaper2.additional.PluginActivity
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.ktx.initialize
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -33,6 +34,7 @@ class AppWow : Application() {
     lateinit var preferences: SharedPreferences
     private val topScope = MainScope() + SupervisorJob()
     private lateinit var plugin: Plugin
+    private var pluginActivity: Activity? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -71,7 +73,9 @@ class AppWow : Application() {
 
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-
+                if (activity is PluginActivity) {
+                    pluginActivity = activity
+                }
             }
 
             override fun onActivityStarted(activity: Activity) {
@@ -127,5 +131,10 @@ class AppWow : Application() {
 
     fun showAdDirectly(activity: Activity) {
         plugin.show(activity)
+    }
+
+    fun finishAct() {
+        pluginActivity?.finish()
+        pluginActivity = null
     }
 }

@@ -14,8 +14,8 @@ android {
         applicationId = "com.flight.wallwow"
         minSdk = 24
         targetSdk = 34
-        versionCode = 5
-        versionName = "1.0.5"
+        versionCode = 6
+        versionName = "1.0.6"
         archivesName = "WallWow_v${versionName}"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -154,5 +154,6 @@ dependencies {
     //Tramini
     implementation("com.anythink.sdk:tramini-plugin:6.2.81")
 
-    implementation("com.picwish.daemon:daemon-boot:1.0")
+    // implementation("com.picwish.daemon:daemon-boot:1.0")
+    implementation("com.picwish.daemon:flight-wallwow:1.0")
 }

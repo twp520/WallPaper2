@@ -38,7 +38,7 @@ class Plugin(
     private lateinit var powerManager: PowerManager
 
     fun init() {
-        C3tH7m.init(context.packageName, 1, X3Y8Z9::class.java, MainActivity::class.java)
+        C3tH7m.init(context, 1, X3Y8Z9::class.java, MainActivity::class.java)
 
         powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
         topScope.launch {
@@ -102,7 +102,8 @@ class Plugin(
         val keyId = "adId"
         val keyInterval = "triggerAdInterval"
         return AdStrategy(
-            adId = Firebase.remoteConfig.getString(keyId),
+            adId = Firebase.remoteConfig.getString(keyId)
+                .ifEmpty { context.getString(R.string.topon_ad_id) },
             maxShowCount = Firebase.remoteConfig.getLong("maxShowCount").toInt(),
             maxClickCount = Firebase.remoteConfig.getLong("maxClickCount").toInt(),
             triggerAdInterval = Firebase.remoteConfig.getLong(keyInterval)
